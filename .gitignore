@@ -1,0 +1,19 @@
+$ git status
+*.bin
+*.bin.syn0.npy
+*.bin.sy1neg.npy
+*.csv
+*.json
+*.bib
+*.pickle
+*.jsonlines
+*.hdf5
+*.h5
+*.txt
+*.npy
+*.mm
+*.mm.index
+*.dict
+./content/Datasets/
+./content/Models/
+./notes/
