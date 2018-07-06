@@ -57,6 +57,10 @@ html body#index.home header.hero.is-primary div.hero-head div.container nav.navb
     background-color: #051c38;
 }
 
+html body#index.home header.hero.is-primary div.hero-head div.container nav.navbar div.navbar-brand a.navbar-item.title.is-3 {
+    background-color: #051c38;
+}
+
 html body#index.home nav.navbar.has-shadow.is-hidden-print div.container div#navMenu.navbar-menu div.navbar-end a.navbar-item.is-tab {
     color: #ffffff;
     
