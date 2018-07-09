@@ -49,17 +49,20 @@
       <aside id="featured" class="body">
         <article>
           <h1 class="title">
-            <a href="./evolving-networks.html">Evolving Neural Networks??? 🐣</a>
+            <a href="./learning-to-data-science.html">Learning to Data Science. 🎓</a>
           </h1>
 <footer class="post-info">
-  <abbr class="published" title="2018-07-06T20:00:00+02:00">
-    Published <span class="is-info">Fri 06 July 2018</span>
+  <abbr class="published" title="2018-07-09T20:00:00+02:00">
+    Published <span class="is-info">Mon 09 July 2018</span>
     in <a href="./category/posts.html">posts</a>
   </abbr>
 
     <p class="author">
       <em>by           <a class="url fn" href="./author/marcus-gawronsky.html">Marcus Gawronsky</a>
 </em>
+      <span class="tag is-small is-rounded">
+        <a href="./tag/education.html">education</a>
+      </span>
     </p>
   
 </footer>          <div class="section">
@@ -1039,30 +1042,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>ARE YOU READY! 👏  I'm actually quite excited as this is a project as I have been wanting to do for a while...  Evolutionary Search over Deep Neural Network Architectures 🐣.  This is actually an old concept <a href="https://ieeexplore.ieee.org/document/784219/">1</a> that has had a bit of a renaissance <a href="https://arxiv.org/pdf/1703.00548.pdf">2</a> 📄.  Cool packages such as <a href="https://github.com/joeddav/devol">DEVOL</a> implement a nice version of this for 2D Convoltuion, but I really wanted to do this myself, in order to implement this for other problems like Feed Forward Neural Networks or 1d Convolution 🤓.  <a href="http://deap.readthedocs.io/en/master/api/tools.html">DEAP</a> is a popular python library for evolutionary computing and seems really versatile, so check it out.</p>
-<p>Ok, time to import some libraries...<em>boring</em>📚.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [31]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="kn">from</span> <span class="nn">deap</span> <span class="k">import</span> <span class="n">base</span><span class="p">,</span> <span class="n">tools</span><span class="p">,</span> <span class="n">creator</span>
-
-<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="k">import</span> <span class="n">Conv1D</span><span class="p">,</span> <span class="n">MaxPooling1D</span>
-<span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Model</span>
-<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="k">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Dense</span>
-<span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">regularizers</span>
-
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
+<p>While I am no data science sage, nor an expert on how people ought best learn, I have been asked quite often lately about the resources I use to explore and discover new techniques and applications for Data Science.  🔆  My last few posts have been quite technical, exploring techniqies in dimensionality reduction, document embeddings and evolving neural networks, and I promise there are more coming, but I thought in the meantime it may be useful to make a post about some of my favourite resources for others to enjoy as much I do.  📠</p>
 </div>
 </div>
 </div>
@@ -1070,53 +1050,15 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I recently helped my friend Tim DeWet with a <a href="https://www.biorxiv.org/content/early/2018/06/29/358275">paper</a> on the use of CRISPR. 🔬 It was very frustrating, but very fun.  I thought... no better dataset to implement a evolving neural network on than on a genetics dataset! I won't get into too much of detail of the data itself. 🍳</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [13]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../TimDeWet_Genomics/TrainingData.csv'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [14]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">down</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="k">lambda</span> <span class="n">col</span><span class="p">:</span> <span class="n">col</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'Down_'</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/marcussky/.conda/envs/lily/lib/python3.6/site-packages/ipykernel_launcher.py:1: FutureWarning: 'select' is deprecated and will be removed in a future release. You can use .loc[labels.map(crit)] as a replacement
-  """Entry point for launching an IPython kernel.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [15]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">logRatio</span>
-<span class="n">y_transform</span> <span class="o">=</span> <span class="n">y_data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">y_data</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
-</pre></div>
-</div>
+<h1 id="Podcasts">Podcasts<a class="anchor-link" href="#Podcasts">¶</a></h1><p>I listen to a lot of Data Science podcasts... really, a lot. 📻 And my interests have changed over time as I have learn more and completed some back-catalogues of my absolute favourites.  One of the first podcasts I got into was one called <a href="https://dataskeptic.com/">DataSkeptic</a> and it really is one of my favourites. The mini-episodes serves a great intoductions to things and the interviews are ussually of exceptional quality.  Kyle and his spouse Linda has a wonderful dynamic on the show, which I find warm and funny.  📡</p>
+<p>I have recently started getting into <a href="https://www.datacamp.com/community/podcast">DataFramed</a>, which is a great podcasts from the people at <a href="https://www.datacamp.com/">DataCamp</a>, whose app I really enjoy using them I am waiting around to practise my skills and maybe learn some hidden gems of certain packages in R and Python. 📱</p>
+<p>For those of you ready to delve deeped into the maze <a href="https://www.thetalkingmachines.com/episodes">Talking Machines</a> is one of the absolute best. It isn't as frequent as the rest, but they have had some huge names on the show and for those really to get technical it is a absolute gold mine of knowledge.  A few years ago they have a number of episodes from an African Data Science Conferrence, which I really enjoyed and I think really inspired a lot of my thoughts on the oppotunities for Data Science here in South Africa.  🇿🇦</p>
+<p>Others.  I'm not going to give longer descriptions for these but rather a list, just cause of time, they are really good but I do not follow then quite as frequently 🗳:</p>
+<ul>
+<li><a href="https://twimlai.com/">TWIML&amp;AI</a> </li>
+<li><a href="lineardigressions.com/">Linear Digressions</a> </li>
+<li><a href="https://softwareengineeringdaily.com/">Software Engineering Daily</a> </li>
+</ul>
 </div>
 </div>
 </div>
@@ -1124,25 +1066,8 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So the Genetic Algorithms involves four main steps...<br/>
-<img alt="Evolution" src="https://genetic.io/wp-content/uploads/2016/07/processus_en.png"/></p>
-<p><strong>Initialize/Selection:</strong>  Where we select new genes.<br/>
-<strong>Evalutation:</strong>  Where we evaluate these genes.<br/>
-<strong>Cross-over:</strong>  Where we 'breed' out individuals to exchange genes.<br/>
-<strong>Mutation:</strong>  Where we introduce new genetic material.</p>
-<p>Here, we let the number of neurons and the number of layers in our network be our genes and our loss function is the loss on our hold-out set.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">creator</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">"FitnessMax"</span><span class="p">,</span> <span class="n">base</span><span class="o">.</span><span class="n">Fitness</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,))</span>
-<span class="n">creator</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">"Individual"</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="n">fitness</span><span class="o">=</span><span class="n">creator</span><span class="o">.</span><span class="n">FitnessMax</span><span class="p">)</span>
-</pre></div>
-</div>
+<h1 id="Youtube">Youtube<a class="anchor-link" href="#Youtube">¶</a></h1><p>While my I want a crazy amount of Youtube, most of it is just recreational, and I battle to follow code or concepts in that format. 📺 I have really enjoyed <a href="https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A">Siraj Raval</a>,<a href="https://www.youtube.com/user/sentdex">Sentdex</a> and <a href="https://www.youtube.com/user/keeroyz">Two Minute Papers</a>, and if you want to improve your understanding of linear algebra <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a>.  These are all very different formats, so I recommend watching at learn one video from each to see the style you like best.  📐</p>
+<p>One great thing about youtube is that many conferrences now publish their content there, so you can find old presentations from PyCon and Scipy Conferrences which are always of an incredibly high quality.  🐍</p>
 </div>
 </div>
 </div>
@@ -1150,72 +1075,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As you can see here, regulatization is really important or the network can get too big, so I included regularization on each layer's regularization for backprop and then added a regularization term for Genetic Algorithm.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [74]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">evalOneMax</span><span class="p">(</span><span class="n">individual</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">50</span><span class="p">):</span>
-    <span class="n">inputs</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">down</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],))</span>
-    
-    <span class="n">dense1</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">individual</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> 
-                   <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l1_l2</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> 
-                   <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span> <span class="k">if</span> <span class="n">individual</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
-    
-    <span class="n">dense2</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">individual</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> 
-                   <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l1_l2</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> 
-                   <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span> <span class="k">if</span> <span class="n">individual</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="n">dense1</span><span class="p">)</span>
-    
-    <span class="n">dense3</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">individual</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> 
-                   <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l1_l2</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> 
-                   <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span> <span class="k">if</span> <span class="n">individual</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="n">dense2</span><span class="p">)</span>
-    
-    <span class="n">output</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l1_l2</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> 
-                   <span class="n">activation</span><span class="o">=</span><span class="s1">'softmax'</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
-    
-    <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">output</span><span class="p">)</span>
-    
-    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">'adam'</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">log_poisson_loss</span><span class="p">)</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">down</span><span class="o">.</span><span class="n">loc</span><span class="p">[::</span><span class="mi">2</span><span class="p">,:],</span> <span class="n">y_transform</span><span class="o">.</span><span class="n">loc</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span>
-                <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                <span class="n">batch_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-                <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                <span class="n">validation_split</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span>
-           <span class="p">)</span>
-    <span class="k">return</span>  <span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">down</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,:],</span> <span class="n">y_transform</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">],</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="n">alpha</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">individual</span><span class="p">),)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [75]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">toolbox</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">Toolbox</span><span class="p">()</span>
-
-<span class="n">N_ATTR</span> <span class="o">=</span> <span class="mi">3</span>
-
-<span class="c1"># Attribute generator </span>
-<span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">"attr_bool"</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">64</span><span class="p">)</span>
-
-<span class="c1"># Structure initializers</span>
-<span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">"individual"</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">initRepeat</span><span class="p">,</span> <span class="n">creator</span><span class="o">.</span><span class="n">Individual</span><span class="p">,</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">attr_bool</span><span class="p">,</span> <span class="n">N_ATTR</span><span class="p">)</span>
-<span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">"population"</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">initRepeat</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">individual</span><span class="p">)</span>
-
-<span class="c1">#Evolutionary Strategies</span>
-<span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">"evaluate"</span><span class="p">,</span> <span class="n">evalOneMax</span><span class="p">)</span>
-<span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">"mate"</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">cxTwoPoint</span><span class="p">)</span>
-<span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">"mutate"</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">mutUniformInt</span><span class="p">,</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">up</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">indpb</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">"select"</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">selTournament</span><span class="p">,</span> <span class="n">tournsize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
+<h1 id="Books,-Tutorials-and-Papers">Books, Tutorials and Papers<a class="anchor-link" href="#Books,-Tutorials-and-Papers">¶</a></h1><p>This is hard, cause there is just so much.  I find the <a href="https://www.reddit.com/r/MachineLearning/">Machine Learning subReddit</a> a great place for finding new Machine Learning papers on <a href="https://arxiv.org/">arkiv</a>. 📚 I have really enjoyed <a href="https://g.co/kgs/U7GmVr">Python Machine Learning, by Sebastien Raschka</a> and <a href="https://www.manning.com/books/deep-learning-with-python">Deep Learning in Python, by François Chollet</a>.  Thankfully they have been at the UCT or Stellenbosch University Libraries, so I have been quite lucky to get physical copies.  Tutorials by Yoshua Bengio on <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwiIk7ql4ZLcAhWSRMAKHW60AFMQFggsMAA&amp;url=https%3A%2F%2Fwww.iro.umontreal.ca%2F~bengioy%2Fpapers%2Fftml.pdf&amp;usg=AOvVaw22DlAA2wFmCdIKg-SeNNyR">Learning Deep Architectures for AI</a> are also fantastic and highly recommended.  🎓</p>
 </div>
 </div>
 </div>
@@ -1223,228 +1083,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>TIME TO EVOLVE!</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [76]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">N_POP</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">CXPB</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">MUTPB</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">GEN</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-    <span class="sd">"""</span>
-<span class="sd">    # N_POP is the population size</span>
-<span class="sd">    # MUTPB is the probability for mutating an individual</span>
-<span class="sd">    # CXPB  is the probability with which two individuals are crossed</span>
-<span class="sd">    # GEN is the number of generations to be run by the algorithm</span>
-<span class="sd">    """</span>
-    
-    <span class="n">pop</span> <span class="o">=</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">population</span><span class="p">(</span><span class="n">N_POP</span><span class="p">)</span>
-    
-    <span class="c1"># Evaluate the entire population</span>
-    <span class="n">fitnesses</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">toolbox</span><span class="o">.</span><span class="n">evaluate</span><span class="p">,</span> <span class="n">pop</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">fit</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span> <span class="n">fitnesses</span><span class="p">):</span>
-        <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">fit</span>    
-    
-    <span class="c1"># Extracting all the fitnesses of </span>
-    <span class="n">fits</span> <span class="o">=</span> <span class="p">[</span><span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">pop</span><span class="p">]</span>
-
-    <span class="c1"># Variable keeping track of the number of generations</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="c1"># Begin the evolution</span>
-    <span class="k">while</span> <span class="nb">max</span><span class="p">(</span><span class="n">fits</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="n">GEN</span><span class="p">:</span>
-        <span class="c1"># A new generation</span>
-        <span class="n">g</span> <span class="o">=</span> <span class="n">g</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">"-- Generation </span><span class="si">{g}</span><span class="s2"> --"</span><span class="p">)</span>
-        <span class="c1"># Select the next generation individuals</span>
-        <span class="n">offspring</span> <span class="o">=</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pop</span><span class="p">))</span>
-        <span class="c1"># Clone the selected individuals</span>
-        <span class="n">offspring</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">toolbox</span><span class="o">.</span><span class="n">clone</span><span class="p">,</span> <span class="n">offspring</span><span class="p">))</span>
-
-        <span class="c1"># Apply crossover and mutation on the offspring</span>
-        <span class="k">for</span> <span class="n">child1</span><span class="p">,</span> <span class="n">child2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">offspring</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">offspring</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]):</span>
-            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">CXPB</span><span class="p">:</span>
-                <span class="n">toolbox</span><span class="o">.</span><span class="n">mate</span><span class="p">(</span><span class="n">child1</span><span class="p">,</span> <span class="n">child2</span><span class="p">)</span>
-                <span class="k">del</span> <span class="n">child1</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span>
-                <span class="k">del</span> <span class="n">child2</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span>
-        
-        <span class="k">for</span> <span class="n">mutant</span> <span class="ow">in</span> <span class="n">offspring</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">MUTPB</span><span class="p">:</span>
-                <span class="n">toolbox</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">mutant</span><span class="p">)</span>
-              
-        <span class="c1"># Evaluate the individuals with an invalid fitness</span>
-        <span class="n">invalid_ind</span> <span class="o">=</span> <span class="p">[</span><span class="n">ind</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">offspring</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">valid</span><span class="p">]</span>
-        <span class="n">fitnesses</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">toolbox</span><span class="o">.</span><span class="n">evaluate</span><span class="p">,</span> <span class="n">invalid_ind</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">fit</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">invalid_ind</span><span class="p">,</span> <span class="n">fitnesses</span><span class="p">):</span>
-            <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">fit</span>
-              
-        <span class="n">pop</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">offspring</span>
-              
-        <span class="c1"># Gather all the fitnesses in one list and print the stats</span>
-        <span class="n">fits</span> <span class="o">=</span> <span class="p">[</span><span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">pop</span><span class="p">]</span>
-        
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Offspring: </span><span class="si">{offspring}</span><span class="s1">'</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">'Fitness Funcitons: {list(map(lambda x: round(x, 3),fits))}'</span><span class="p">)</span>
-        
-        <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pop</span><span class="p">)</span>
-        <span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">fits</span><span class="p">)</span> <span class="o">/</span> <span class="n">length</span>
-        <span class="n">sum2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fits</span><span class="p">)</span>
-        <span class="n">std</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sum2</span> <span class="o">/</span> <span class="n">length</span> <span class="o">-</span> <span class="n">mean</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
-        
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"  Min </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="nb">min</span><span class="p">(</span><span class="n">fits</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"  Max </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="nb">max</span><span class="p">(</span><span class="n">fits</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"  Avg </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">mean</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"  Std </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">std</span><span class="p">)</span>
-        
-    <span class="k">return</span> <span class="n">pop</span><span class="p">[</span><span class="n">fits</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">fits</span><span class="p">))]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [77]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pop</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">N_POP</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">GEN</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>-- Generation 1 --
-Offspring: [[12, 28, 3], [4, 33, 25], [16, 54, 4], [4, 33, 3], [17, 29, 10], [4, 33, 54], [12, 28, 25], [59, 28, 4], [6, 33, 3], [4, 33, 12]]
-Fitness Funcitons: [-2.294, -1.913, -1.673, -2.353, -1.413, -2.174, -1.853, -1.334, -2.353, -2.174]
-  Min -2.3532354755401608
-  Max -1.333711835861206
-  Avg -1.9534641904830932
-  Std 0.36025956688424743
--- Generation 2 --
-Offspring: [[4, 33, 3], [6, 33, 3], [4, 10, 25], [12, 28, 12], [6, 33, 3], [6, 33, 11], [6, 33, 3], [4, 8, 25], [4, 33, 3], [6, 33, 3]]
-Fitness Funcitons: [-2.353, -2.353, -2.374, -2.114, -2.353, -2.353, -2.314, -2.414, -2.353, -2.314]
-  Min -2.4136019248962404
-  Max -2.1135084648132323
-  Avg -2.329428523063659
-  Std 0.07680434500444087
--- Generation 3 --
-Offspring: [[6, 33, 3], [6, 33, 3], [4, 33, 23], [4, 8, 25], [62, 8, 25], [6, 33, 3], [6, 33, 12], [4, 10, 25], [4, 8, 25], [6, 33, 3]]
-Fitness Funcitons: [-2.353, -2.353, -2.353, -2.414, -2.414, -2.353, -2.353, -2.374, -2.414, -2.353]
-  Min -2.4136019248962404
-  Max -2.3532354755401608
-  Avg -2.3733762617111203
-  Std 0.02699675475693308
--- Generation 4 --
-Offspring: [[6, 10, 25], [4, 8, 25], [4, 8, 25], [6, 33, 3], [4, 8, 3], [6, 33, 25], [4, 8, 25], [4, 8, 25], [62, 8, 25], [4, 8, 25]]
-Fitness Funcitons: [-2.374, -2.414, -2.414, -2.353, -2.853, -1.873, -2.414, -2.414, -2.414, -2.414]
-  Min -2.853462926864624
-  Max -1.8733556385040282
-  Avg -2.3935209579467775
-  Std 0.22058106108606038
--- Generation 5 --
-Offspring: [[4, 8, 25], [4, 8, 25], [62, 8, 3], [49, 8, 25], [4, 45, 3], [62, 8, 25], [4, 4, 25], [62, 1, 24], [6, 10, 3], [4, 8, 25]]
-Fitness Funcitons: [-2.414, -2.414, -1.693, -1.514, -2.853, -2.414, -2.414, -2.414, -2.774, -2.414]
-  Min -2.853462926864624
-  Max -1.513904954910278
-  Avg -2.3315682125091555
-  Std 0.3979975471076103
--- Generation 6 --
-Offspring: [[4, 4, 25], [62, 1, 24], [51, 63, 3], [62, 1, 24], [4, 45, 3], [6, 10, 3], [4, 4, 25], [62, 1, 24], [4, 10, 3], [6, 45, 3]]
-Fitness Funcitons: [-2.414, -2.414, -2.774, -2.414, -2.853, -2.774, -2.414, -2.414, -2.813, -2.073]
-  Min -2.853462926864624
-  Max -2.073256694793701
-  Avg -2.535519169807434
-  Std 0.24075195421961873
--- Generation 7 --
-Offspring: [[4, 10, 3], [4, 45, 3], [4, 10, 3], [6, 10, 3], [62, 1, 23], [62, 1, 24], [46, 63, 3], [4, 45, 3], [4, 10, 3], [3, 26, 3]]
-Fitness Funcitons: [-2.813, -2.853, -2.814, -2.773, -2.414, -2.414, -2.774, -2.853, -2.813, -2.853]
-  Min -2.853462926864624
-  Max -2.4136019248962404
-  Avg -2.7374980220794676
-  Std 0.16434148106036991
--- Generation 8 --
-Offspring: [[6, 10, 3], [4, 45, 3], [46, 63, 3], [4, 10, 3], [4, 45, 3], [3, 26, 3], [4, 10, 3], [4, 45, 48], [3, 10, 3], [4, 26, 3]]
-Fitness Funcitons: [-2.773, -2.853, -2.774, -2.813, -2.853, -2.853, -2.813, -2.853, -2.833, -2.494]
-  Min -2.853462926864624
-  Max -2.4939838714599607
-  Avg -2.7915011930465696
-  Std 0.10356377958806542
--- Generation 9 --
-Offspring: [[3, 10, 3], [3, 26, 3], [4, 19, 31], [4, 45, 3], [4, 54, 11], [4, 45, 3], [4, 38, 55], [3, 10, 3], [4, 26, 48], [3, 39, 3]]
-Fitness Funcitons: [-2.833, -2.853, -2.853, -2.853, -1.774, -2.114, -1.213, -2.834, -1.593, -2.254]
-  Min -2.853462926864624
-  Max -1.2132295150756836
-  Avg -2.3175674257278445
-  Std 0.5898588887759803
--- Generation 10 --
-Offspring: [[3, 26, 3], [4, 19, 31], [60, 33, 3], [4, 45, 3], [4, 19, 31], [4, 19, 31], [3, 10, 3], [4, 45, 3], [4, 45, 3], [4, 45, 3]]
-Fitness Funcitons: [-2.853, -2.853, -2.853, -2.853, -2.853, -2.853, -2.833, -2.853, -2.853, -2.853]
-  Min -2.853462926864624
-  Max -2.8334798545837403
-  Avg -2.851464619636535
-  Std 0.005994921684565828
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is awesome! Lets check it out.  What's really interesting is that this network as very few neurons in early and late layers.  That's not something I would have immediately experimented with, as much of the literture suggests the need for many neurons in early layers.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [79]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pop</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[3, 26, 3]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [78]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loss</span> <span class="o">=</span> <span class="n">evalOneMax</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(-3.152746955871582,)
-</pre>
-</div>
-</div>
+<p>I hope this post wasn't too long as really helps some people orient themselves. 🆘  If you have other great resources, please send them my way! 😀</p>
 </div>
 </div>
 </div>
@@ -1484,6 +1123,17 @@ Fitness Funcitons: [-2.853, -2.853, -2.853, -2.853, -2.853, -2.853, -2.833, -2.8
   <div class="is-hidden-print">
     <h2 class="subtitle">Other articles</h2>
     <div class="columns is-multiline">
+        <div class="column is-half-tablet is-one-third-desktop">
+          <div class="card is-fullwidth is-fullheight">
+            <div class="card-content">
+              <a href="./evolving-networks.html">
+                <h3 class="title is-5">Evolving Neural Networks??? 🐣</h3>
+                <div class="heading subtitle">Fri 06 July 2018</div>
+                <div><p>ARE YOU READY! 👏 This is a project as I have been wanting to do for a while... Evolutionary Search over Deep...<br /></p></div>
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="column is-half-tablet is-one-third-desktop">
           <div class="card is-fullwidth is-fullheight">
             <div class="card-content">
