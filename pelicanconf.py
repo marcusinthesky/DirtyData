@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Marcus Gawronsky'
 SITENAME = 'DirtyData'
 SITEURL = ''
+PROFILE_IMAGE = 'profile-picture.png'
 
 PATH = 'content'
 
@@ -38,13 +39,19 @@ RELATIVE_URLS = True
 MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['ipynb.markup','assets']
+PLUGINS = ['ipynb.markup']
+#,'assets']
 OUTPUT_PATH = 'docs/'
 
 # for my themes
 ## https://github.com/textbook/bulrush/tree/19b2fc4d79e7c060218172ae5484a4a216b40921
-import bulrush
+# import bulrush
 
-THEME = bulrush.PATH
-JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
-JINJA_FILTERS = bulrush.FILTERS
+# THEME = bulrush.PATH
+# JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
+# JINJA_FILTERS = bulrush.FILTERS
+THEME = u"pelican-hyde"
+
+# profilepic
+STATIC_PATHS = ['images']
+PROFILE_PICTURE = "profile-picture.png"

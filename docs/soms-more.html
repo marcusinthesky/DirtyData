@@ -1,153 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
-<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width">
-  <title>SOMS some more</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-    <link rel="stylesheet" href="./theme/css/main.b71634c7.css">
-  <style media="print">.is-hidden-print{display:none !important}</style>
-<meta property="og:title" content="DirtyData - SOMS some more">
-  <meta property="og:description" content="SOMS (Self-organizing Maps), or Kohonen Networks, are an awesome way of learning from and analyzing the structure of high-dimensional data. Today, the method is far less popular than many hotter...">
-<meta property="og:url" content="./soms-more.html">
-    <meta property="og:image" content="data:image/png;base64,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
-roTBs2RqAAAAAElFTkSuQmCC">
-    <meta name="twitter:image:alt" content="DirtyData">
-<meta name="twitter:card" content="summary">
-<meta property="og:site_name" content="DirtyData">
-<meta property="og:type" content="article">
-  <meta property="article:published_time" content="2018-12-02T20:00:00+02:00">
-  <meta property="article:section" content="posts">
-</head>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-<body id="index" class="home">
-<header class="hero is-primary">
-  <div class="hero-head">
-    <div class="container">
-      <nav class="navbar">
-        <div class="navbar-brand">
-          <a class="navbar-item title is-3"
-             href="./">DirtyData</a>
-        </div>
-      </nav>
-    </div>
-  </div>
-</header>
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="SOMS some more" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="./soms-more.html" />
+		<meta property="og:image" content="./images/profile-picture.png" />
 
-<nav class="navbar has-shadow is-hidden-print">
-  <div class="container">
-    <div class="navbar-center"></div>
-    <span id="navToggle" class="navbar-burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div id="navMenu" class="navbar-menu">
-        <div class="navbar-end">
-              <a class="navbar-item is-tab is-active"
-                 href="./category/posts.html">posts</a>
-              <a class="navbar-item is-tab "
-                 href="./category/about.html">about</a>
-        </div>
-    </div>
-  </div>
-</nav>
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<div class="container">
-  <div class="section columns">
-    <div class="column is-three-quarters-desktop is-two-thirds-tablet">
-<section id="content" class="body">
-  <article>
-    <h1 class="title">
-      <a href="./soms-more.html" rel="bookmark"
-         title="Permalink to SOMS some more">SOMS some more</a></h1>
-<footer class="post-info">
-  <abbr class="published" title="2018-12-02T20:00:00+02:00">
-    Published <span class="is-info">Sun 02 December 2018</span>
-    in <a href="./category/posts.html">posts</a>
-  </abbr>
+		<title>DirtyData</title>
 
-    <p class="author">
-      <em>by           <a class="url fn" href="./author/marcus-gawronsky.html">Marcus Gawronsky</a>
-</em>
-    </p>
-  
-</footer>    <div class="section"><style type="text/css">/*!
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="./theme/css/poole.css" />
+		<link rel="stylesheet" href="./theme/css/hyde.css" />
+		<link rel="stylesheet" href="./theme/css/syntax.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- RSS -->
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="./images/profile-picture.png">
+					DirtyData
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+		<nav class="sidebar-nav">
+					<a class="sidebar-nav-item" href="https://twitter.com/marcusinthesky">
+						<i class="fa fa-Twitter"></i>
+					</a>
+					<a class="sidebar-nav-item" href="https://github.com/marcusinthesky">
+						<i class="fa fa-GitHub"></i>
+					</a>
+					<a class="sidebar-nav-item" href="https://za.linkedin.com/in/marcussky">
+						<i class="fa fa-LinkedIn"></i>
+					</a>
+					<a class="sidebar-nav-item" href="https://www.kaggle.com/marcusgawronsky">
+						<i class="fa fa-Kaggle"></i>
+					</a>
+			<a class="sidebar-nav-item" href="">
+				<i class="fa fa-feed"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">SOMS some more</h1>
+	<span class="post-date">Sun 02 December 2018</span>
+	<style type="text/css">/*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -226,12 +269,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -244,27 +295,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -460,7 +523,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -470,11 +535,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -722,6 +800,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -760,7 +841,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -882,6 +963,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -898,16 +983,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -923,6 +1016,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -973,8 +1071,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1112,100 +1217,73 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 </style><script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>\n<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js" type="text/javascript"></script>\n<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js" type="text/javascript"></script>\n<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>\n<script type="text/javascript">function HoloViewsWidget() {\n}\n\nHoloViewsWidget.prototype.init_slider = function(init_val){\n  if(this.load_json) {    this.from_json()  } else {\n    this.update_cache();\n  }\n}\n\nHoloViewsWidget.prototype.populate_cache = function(idx){\n  this.cache[idx].innerHTML = this.frames[idx];\n  if (this.embed) {\n    delete this.frames[idx];\n  }\n}\n\nHoloViewsWidget.prototype.process_error = function(msg){\n}\n\nHoloViewsWidget.prototype.from_json = function() {\n  var data_url = this.json_path + this.id + \'.json\';\n  $.getJSON(data_url, $.proxy(function(json_data) {\n    this.frames = json_data;\n    this.update_cache();\n    this.update(0);\n  }, this));\n}\n\nHoloViewsWidget.prototype.dynamic_update = function(current){\n  if (current === undefined) {\n    return\n  }\n  this.current = current;\n  if (this.comm) {\n    var msg = {comm_id: this.id+\'_client\', content: current}\n    this.comm.send(msg);\n  }\n}\n\nHoloViewsWidget.prototype.update_cache = function(force){\n  var frame_len = Object.keys(this.frames).length;\n  for (var i=0; i<frame_len; i++) {\n    if(!this.load_json || this.dynamic)  {\n      var frame = Object.keys(this.frames)[i];\n    } else {\n      var frame = i;\n    }\n    if(!(frame in this.cache) || force) {\n      if ((frame in this.cache) && force) { this.cache[frame].remove() }\n      var div = document.createElement("div");\n      var parent = document.getElementById("_anim_img"+this.id);\n      div.style.display = "none";\n      parent.appendChild(div)\n      this.cache[frame] = div;\n      var cache_id = "_anim_img"+this.id+"_"+frame;\n      this.populate_cache(frame);\n    }\n  }\n}\n\nHoloViewsWidget.prototype.update = function(current){\n  if(current in this.cache) {\n    for (var index in this.cache) {\n      this.cache[index].style.display = "none";\n    }\n    this.cache[current].style.display = "";\n    this.wait = false;\n  }\n}\n\nHoloViewsWidget.prototype.init_comms = function() {\n  var that = this\n  HoloViews.comm_manager.register_target(this.plot_id, this.id, function (msg) { that.process_msg(msg) })\n  if (!this.cached || this.dynamic) {\n    function ack_callback(msg) {\n      msg = JSON.parse(msg.content.data);\n      var comm_id = msg["comm_id"]\n      var comm_status = HoloViews.comm_status[comm_id];\n      if (that.queue.length > 0) {\n        that.time = Date.now();\n        that.dynamic_update(that.queue[that.queue.length-1]);\n        that.queue = [];\n      } else {\n        that.wait = false;\n      }\n      if ((msg.msg_type == "Ready") && msg.content) {\n        console.log("Python callback returned following output:", msg.content);\n      } else if (msg.msg_type == "Error") {\n        console.log("Python failed with the following traceback:", msg[\'traceback\'])\n      }\n    }\n    var comm = HoloViews.comm_manager.get_client_comm(this.plot_id, this.id+\'_client\', ack_callback);\n    return comm\n  }\n}\n\nHoloViewsWidget.prototype.process_msg = function(msg) {\n}\n\nfunction SelectionWidget(frames, id, slider_ids, keyMap, dim_vals, notFound, load_json, mode, cached, json_path, dynamic, plot_id){\n  this.frames = frames;\n  this.id = id;\n  this.plot_id = plot_id;\n  this.slider_ids = slider_ids;\n  this.keyMap = keyMap\n  this.current_frame = 0;\n  this.current_vals = dim_vals;\n  this.load_json = load_json;\n  this.mode = mode;\n  this.notFound = notFound;\n  this.cached = cached;\n  this.dynamic = dynamic;\n  this.cache = {};\n  this.json_path = json_path;\n  this.init_slider(this.current_vals[0]);\n  this.queue = [];\n  this.wait = false;\n  if (!this.cached || this.dynamic) {\n    this.comm = this.init_comms();\n  }\n}\n\nSelectionWidget.prototype = new HoloViewsWidget;\n\n\nSelectionWidget.prototype.get_key = function(current_vals) {\n  var key = "(";\n  for (var i=0; i<this.slider_ids.length; i++)\n  {\n    var val = this.current_vals[i];\n    if (!(typeof val === \'string\')) {\n      if (val % 1 === 0) { val = val.toFixed(1); }\n      else { val = val.toFixed(10); val = val.slice(0, val.length-1);}\n    }\n    key += "\'" + val + "\'";\n    if(i != this.slider_ids.length-1) { key += \', \';}\n    else if(this.slider_ids.length == 1) { key += \',\';}\n  }\n  key += ")";\n  return this.keyMap[key];\n}\n\nSelectionWidget.prototype.set_frame = function(dim_val, dim_idx){\n  this.current_vals[dim_idx] = dim_val;\n  var key = this.current_vals;\n  if (!this.dynamic) {\n    key = this.get_key(key)\n  }\n  if (this.dynamic || !this.cached) {\n    if ((this.time !== undefined) && ((this.wait) && ((this.time + 10000) > Date.now()))) {\n      this.queue.push(key);\n      return\n    }\n    this.queue = [];\n    this.time = Date.now();\n    this.current_frame = key;\n    this.wait = true;\n    this.dynamic_update(key)\n  } else if (key !== undefined) {\n    this.update(key)\n  }\n}\n\n\n/* Define the ScrubberWidget class */\nfunction ScrubberWidget(frames, num_frames, id, interval, load_json, mode, cached, json_path, dynamic, plot_id){\n  this.slider_id = "_anim_slider" + id;\n  this.loop_select_id = "_anim_loop_select" + id;\n  this.id = id;\n  this.plot_id = plot_id;\n  this.interval = interval;\n  this.current_frame = 0;\n  this.direction = 0;\n  this.dynamic = dynamic;\n  this.timer = null;\n  this.load_json = load_json;\n  this.mode = mode;\n  this.cached = cached;\n  this.frames = frames;\n  this.cache = {};\n  this.length = num_frames;\n  this.json_path = json_path;\n  document.getElementById(this.slider_id).max = this.length - 1;\n  this.init_slider(0);\n  this.wait = false;\n  this.queue = [];\n  if (!this.cached || this.dynamic) {\n    this.comm = this.init_comms()\n  }\n}\n\nScrubberWidget.prototype = new HoloViewsWidget;\n\nScrubberWidget.prototype.set_frame = function(frame){\n  this.current_frame = frame;\n  var widget = document.getElementById(this.slider_id);\n  if (widget === null) {\n    this.pause_animation();\n    return\n  }\n  widget.value = this.current_frame;\n  if (this.dynamic || !this.cached) {\n    if ((this.time !== undefined) && ((this.wait) && ((this.time + 10000) > Date.now()))) {\n      this.queue.push(frame);\n      return\n    }\n    this.queue = [];\n    this.time = Date.now();\n    this.wait = true;\n    this.dynamic_update(frame)\n  } else {\n    this.update(frame)\n  }\n}\n\nScrubberWidget.prototype.get_loop_state = function(){\n  var button_group = document[this.loop_select_id].state;\n  for (var i = 0; i < button_group.length; i++) {\n    var button = button_group[i];\n    if (button.checked) {\n      return button.value;\n    }\n  }\n  return undefined;\n}\n\n\nScrubberWidget.prototype.next_frame = function() {\n  this.set_frame(Math.min(this.length - 1, this.current_frame + 1));\n}\n\nScrubberWidget.prototype.previous_frame = function() {\n  this.set_frame(Math.max(0, this.current_frame - 1));\n}\n\nScrubberWidget.prototype.first_frame = function() {\n  this.set_frame(0);\n}\n\nScrubberWidget.prototype.last_frame = function() {\n  this.set_frame(this.length - 1);\n}\n\nScrubberWidget.prototype.slower = function() {\n  this.interval /= 0.7;\n  if(this.direction > 0){this.play_animation();}\n  else if(this.direction < 0){this.reverse_animation();}\n}\n\nScrubberWidget.prototype.faster = function() {\n  this.interval *= 0.7;\n  if(this.direction > 0){this.play_animation();}\n  else if(this.direction < 0){this.reverse_animation();}\n}\n\nScrubberWidget.prototype.anim_step_forward = function() {\n  if(this.current_frame < this.length - 1){\n    this.next_frame();\n  }else{\n    var loop_state = this.get_loop_state();\n    if(loop_state == "loop"){\n      this.first_frame();\n    }else if(loop_state == "reflect"){\n      this.last_frame();\n      this.reverse_animation();\n    }else{\n      this.pause_animation();\n      this.last_frame();\n    }\n  }\n}\n\nScrubberWidget.prototype.anim_step_reverse = function() {\n  if(this.current_frame > 0){\n    this.previous_frame();\n  } else {\n    var loop_state = this.get_loop_state();\n    if(loop_state == "loop"){\n      this.last_frame();\n    }else if(loop_state == "reflect"){\n      this.first_frame();\n      this.play_animation();\n    }else{\n      this.pause_animation();\n      this.first_frame();\n    }\n  }\n}\n\nScrubberWidget.prototype.pause_animation = function() {\n  this.direction = 0;\n  if (this.timer){\n    clearInterval(this.timer);\n    this.timer = null;\n  }\n}\n\nScrubberWidget.prototype.play_animation = function() {\n  this.pause_animation();\n  this.direction = 1;\n  var t = this;\n  if (!this.timer) this.timer = setInterval(function(){t.anim_step_forward();}, this.interval);\n}\n\nScrubberWidget.prototype.reverse_animation = function() {\n  this.pause_animation();\n  this.direction = -1;\n  var t = this;\n  if (!this.timer) this.timer = setInterval(function(){t.anim_step_reverse();}, this.interval);\n}\n\nfunction extend(destination, source) {\n  for (var k in source) {\n    if (source.hasOwnProperty(k)) {\n      destination[k] = source[k];\n    }\n  }\n  return destination;\n}\n\nfunction update_widget(widget, values) {\n  if (widget.hasClass("ui-slider")) {\n    widget.slider(\'option\', {\n      min: 0,\n      max: values.length-1,\n      dim_vals: values,\n      value: 0,\n      dim_labels: values\n    })\n    widget.slider(\'option\', \'slide\').call(widget, event, {value: 0})\n  } else {\n    widget.empty();\n    for (var i=0; i<values.length; i++){\n      widget.append($("<option>", {\n        value: i,\n        text: values[i]\n      }))\n    };\n    widget.data(\'values\', values);\n    widget.data(\'value\', 0);\n    widget.trigger("change");\n  };\n}\n\nfunction init_slider(id, plot_id, dim, values, next_vals, labels, dynamic, step, value, next_dim,\n                     dim_idx, delay, jQueryUI_CDN, UNDERSCORE_CDN) {\n  // Slider JS Block START\n  function loadcssfile(filename){\n    var fileref=document.createElement("link")\n    fileref.setAttribute("rel", "stylesheet")\n    fileref.setAttribute("type", "text/css")\n    fileref.setAttribute("href", filename)\n    document.getElementsByTagName("head")[0].appendChild(fileref)\n  }\n  loadcssfile("https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css");\n  /* Check if jQuery and jQueryUI have been loaded\n     otherwise load with require.js */\n  var jQuery = window.jQuery,\n    // check for old versions of jQuery\n    oldjQuery = jQuery && !!jQuery.fn.jquery.match(/^1\\.[0-4](\\.|$)/),\n    jquery_path = \'\',\n    paths = {},\n    noConflict;\n  var jQueryUI = jQuery.ui;\n  // check for jQuery\n  if (!jQuery || oldjQuery) {\n    // load if it\'s not available or doesn\'t meet min standards\n    paths.jQuery = jQuery;\n    noConflict = !!oldjQuery;\n  } else {\n    // register the current jQuery\n    define(\'jquery\', [], function() { return jQuery; });\n  }\n  if (!jQueryUI) {\n    paths.jQueryUI = jQueryUI_CDN.slice(null, -3);\n  } else {\n    define(\'jQueryUI\', [], function() { return jQuery.ui; });\n  }\n  paths.underscore = UNDERSCORE_CDN.slice(null, -3);\n  var jquery_require = {\n    paths: paths,\n    shim: {\n      "jQueryUI": {\n        exports:"$",\n        deps: [\'jquery\']\n      },\n      "underscore": {\n        exports: \'_\'\n      }\n    }\n  }\n  require.config(jquery_require);\n  require(["jQueryUI", "underscore"], function(jUI, _){\n    if (noConflict) $.noConflict(true);\n    var vals = values;\n    if (dynamic && vals.constructor === Array) {\n      var default_value = parseFloat(value);\n      var min = parseFloat(vals[0]);\n      var max = parseFloat(vals[vals.length-1]);\n      var wstep = step;\n      var wlabels = [default_value];\n      var init_label = default_value;\n    } else {\n      var min = 0;\n      if (dynamic) {\n        var max = Object.keys(vals).length - 1;\n        var init_label = labels[value];\n        var default_value = values[value];\n      } else {\n        var max = vals.length - 1;\n        var init_label = labels[value];\n        var default_value = value;\n      }\n      var wstep = 1;\n      var wlabels = labels;\n    }\n    function adjustFontSize(text) {\n      var width_ratio = (text.parent().width()/8)/text.val().length;\n      var size = Math.min(0.9, Math.max(0.6, width_ratio))+\'em\';\n      text.css(\'font-size\', size);\n    }\n    var slider = $(\'#_anim_widget\'+id+\'_\'+dim);\n    slider.slider({\n      animate: "fast",\n      min: min,\n      max: max,\n      step: wstep,\n      value: default_value,\n      dim_vals: vals,\n      dim_labels: wlabels,\n      next_vals: next_vals,\n      slide: function(event, ui) {\n        var vals = slider.slider("option", "dim_vals");\n        var next_vals = slider.slider("option", "next_vals");\n        var dlabels = slider.slider("option", "dim_labels");\n        if (dynamic) {\n          var dim_val = ui.value;\n          if (vals.constructor === Array) {\n            var label = ui.value;\n          } else {\n            var label = dlabels[ui.value];\n          }\n        } else {\n          var dim_val = vals[ui.value];\n          var label = dlabels[ui.value];\n        }\n        var text = $(\'#textInput\'+id+\'_\'+dim);\n        text.val(label);\n        adjustFontSize(text);\n        HoloViews.index[plot_id].set_frame(dim_val, dim_idx);\n        if (Object.keys(next_vals).length > 0) {\n          var new_vals = next_vals[dim_val];\n          var next_widget = $(\'#_anim_widget\'+id+\'_\'+next_dim);\n          update_widget(next_widget, new_vals);\n        }\n      }\n    });\n    slider.keypress(function(event) {\n      if (event.which == 80 || event.which == 112) {\n        var start = slider.slider("option", "value");\n        var stop =  slider.slider("option", "max");\n        for (var i=start; i<=stop; i++) {\n          var delay = i*delay;\n          $.proxy(function doSetTimeout(i) { setTimeout($.proxy(function() {\n            var val = {value:i};\n            slider.slider(\'value\',i);\n            slider.slider("option", "slide")(null, val);\n          }, slider), delay);}, slider)(i);\n        }\n      }\n      if (event.which == 82 || event.which == 114) {\n        var start = slider.slider("option", "value");\n        var stop =  slider.slider("option", "min");\n        var count = 0;\n        for (var i=start; i>=stop; i--) {\n          var delay = count*delay;\n          count = count + 1;\n          $.proxy(function doSetTimeout(i) { setTimeout($.proxy(function() {\n            var val = {value:i};\n            slider.slider(\'value\',i);\n            slider.slider("option", "slide")(null, val);\n          }, slider), delay);}, slider)(i);\n        }\n      }\n    });\n    var textInput = $(\'#textInput\'+id+\'_\'+dim)\n    textInput.val(init_label);\n    adjustFontSize(textInput);\n  });\n}\n\nfunction init_dropdown(id, plot_id, dim, vals, value, next_vals, labels, next_dim, dim_idx, dynamic) {\n  var widget = $("#_anim_widget"+id+\'_\'+dim);\n  widget.data(\'values\', vals)\n  for (var i=0; i<vals.length; i++){\n    if (dynamic) {\n      var val = vals[i];\n    } else {\n      var val = i;\n    }\n    widget.append($("<option>", {\n      value: val,\n      text: labels[i]\n    }));\n  };\n  widget.data("next_vals", next_vals);\n  widget.val(value);\n  widget.on(\'change\', function(event, ui) {\n    if (dynamic) {\n      var dim_val = parseInt(this.value);\n    } else {\n      var dim_val = $.data(this, \'values\')[this.value];\n    }\n    var next_vals = $.data(this, "next_vals");\n    if (Object.keys(next_vals).length > 0) {\n      var new_vals = next_vals[dim_val];\n      var next_widget = $(\'#_anim_widget\'+id+\'_\'+next_dim);\n      update_widget(next_widget, new_vals);\n    }\n    var widgets = HoloViews.index[plot_id]\n    if (widgets) {\n      widgets.set_frame(dim_val, dim_idx);\n    }\n  });\n}\n\n\nif (window.HoloViews === undefined) {\n  window.HoloViews = {}\n  window.PyViz = window.HoloViews\n} else if (window.PyViz === undefined) {\n  window.PyViz = window.HoloViews\n}\n\n\nvar _namespace = {\n  init_slider: init_slider,\n  init_dropdown: init_dropdown,\n  comms: {},\n  comm_status: {},\n  index: {},\n  plot_index: {},\n  kernels: {},\n  receivers: {}\n}\n\nfor (var k in _namespace) {\n  if (!(k in window.HoloViews)) {\n    window.HoloViews[k] = _namespace[k];\n  }\n}\n\nvar JS_MIME_TYPE = \'application/javascript\';\nvar HTML_MIME_TYPE = \'text/html\';\nvar EXEC_MIME_TYPE = \'application/vnd.holoviews_exec.v0+json\';\nvar CLASS_NAME = \'output\';\n\n/**\n * Render data to the DOM node\n */\nfunction render(props, node) {\n  var div = document.createElement("div");\n  var script = document.createElement("script");\n  node.appendChild(div);\n  node.appendChild(script);\n}\n\n/**\n * Handle when a new output is added\n */\nfunction handle_add_output(event, handle) {\n  var output_area = handle.output_area;\n  var output = handle.output;\n  if (!output.data.hasOwnProperty(EXEC_MIME_TYPE)) {\n    return\n  }\n  var id = output.metadata[EXEC_MIME_TYPE]["id"];\n  var toinsert = output_area.element.find("." + CLASS_NAME.split(\' \')[0]);\n  if (id !== undefined) {\n    var nchildren = toinsert.length;\n    toinsert[nchildren-1].children[0].innerHTML = output.data[HTML_MIME_TYPE];\n    toinsert[nchildren-1].children[1].textContent = output.data[JS_MIME_TYPE];\n    output_area._hv_plot_id = id;\n    if ((window.Bokeh !== undefined) && (id in Bokeh.index)) {\n      HoloViews.plot_index[id] = Bokeh.index[id];\n    } else {\n      HoloViews.plot_index[id] = null;\n    }\n  }\n}\n\n/**\n * Handle when an output is cleared or removed\n */\nfunction handle_clear_output(event, handle) {\n  var id = handle.cell.output_area._hv_plot_id;\n  if ((id === undefined) || !(id in HoloViews.plot_index)) { return; }\n  var comm = window.HoloViews.comm_manager.get_client_comm("hv-extension-comm", "hv-extension-comm", function () {});\n  if (comm !== null) {\n    comm.send({event_type: \'delete\', \'id\': id});\n  }\n  delete HoloViews.plot_index[id];\n  if ((window.Bokeh !== undefined) & (id in window.Bokeh.index)) {\n    window.Bokeh.index[id].model.document.clear();\n    delete Bokeh.index[id];\n  }\n}\n\n/**\n * Handle kernel restart event\n */\nfunction handle_kernel_cleanup(event, handle) {\n  delete HoloViews.comms["hv-extension-comm"];\n  window.HoloViews.plot_index = {}\n}\n\n/**\n * Handle update_display_data messages\n */\nfunction handle_update_output(event, handle) {\n  handle_clear_output(event, {cell: {output_area: handle.output_area}})\n  handle_add_output(event, handle)\n}\n\nfunction register_renderer(events, OutputArea) {\n  function append_mime(data, metadata, element) {\n    // create a DOM node to render to\n    var toinsert = this.create_output_subarea(\n    metadata,\n    CLASS_NAME,\n    EXEC_MIME_TYPE\n    );\n    this.keyboard_manager.register_events(toinsert);\n    // Render to node\n    var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};\n    render(props, toinsert[0]);\n    element.append(toinsert);\n    return toinsert\n  }\n\n  events.on(\'output_added.OutputArea\', handle_add_output);\t\n  events.on(\'output_updated.OutputArea\', handle_update_output);\n  events.on(\'clear_output.CodeCell\', handle_clear_output);\n  events.on(\'delete.Cell\', handle_clear_output);\n  events.on(\'kernel_ready.Kernel\', handle_kernel_cleanup);\n\n  OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {\n    safe: true,\n    index: 0\n  });\n}\n\nif (window.Jupyter !== undefined) {\n  try {\n    var events = require(\'base/js/events\');\n    var OutputArea = require(\'notebook/js/outputarea\').OutputArea;\n    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {\n      register_renderer(events, OutputArea);\n    }\n  } catch(err) {\n  }\n}\n\n// Define Bokeh specific subclasses\nfunction BokehSelectionWidget() {\n  SelectionWidget.apply(this, arguments);\n}\n\nfunction BokehScrubberWidget() {\n  ScrubberWidget.apply(this, arguments);\n}\n\n// Let them inherit from the baseclasses\nBokehSelectionWidget.prototype = Object.create(SelectionWidget.prototype);\nBokehScrubberWidget.prototype = Object.create(ScrubberWidget.prototype);\n\n// Define methods to override on widgets\nvar BokehMethods = {\n  update_cache : function(){\n    for (var index in this.frames) {\n      this.frames[index] = JSON.parse(this.frames[index]);\n    }\n  },\n  update : function(current){\n    if (current === undefined) {\n      return;\n    }\n    var data = this.frames[current];\n    if (data !== undefined) {\n      if (data.root in HoloViews.plot_index) {\n        var doc = HoloViews.plot_index[data.root].model.document;\n      } else {\n        var doc = Bokeh.index[data.root].model.document;\n      }\n      doc.apply_json_patch(data.content);\n    }\n  },\n  init_comms: function() {\n    if (Bokeh.protocol !== undefined) {\n      this.receiver = new Bokeh.protocol.Receiver()\n    } else {\n      this.receiver = null;\n    }\n    return HoloViewsWidget.prototype.init_comms.call(this);\n  },\n  process_msg : function(msg) {\n    if (this.plot_id in HoloViews.plot_index) {\n      var doc = HoloViews.plot_index[this.plot_id].model.document;\n    } else {\n      var doc = Bokeh.index[this.plot_id].model.document;\n    }\n    if (this.receiver === null) { return }\n    var receiver = this.receiver;\n    if (msg.buffers.length > 0) {\n      receiver.consume(msg.buffers[0].buffer)\n    } else {\n      receiver.consume(msg.content.data)\n    }\n    const comm_msg = receiver.message;\n    if ((comm_msg != null) && (doc != null)) {\n      doc.apply_json_patch(comm_msg.content, comm_msg.buffers)\n    }\n  }\n}\n\n// Extend Bokeh widgets with backend specific methods\nextend(BokehSelectionWidget.prototype, BokehMethods);\nextend(BokehScrubberWidget.prototype, BokehMethods);\n\nwindow.HoloViews.BokehSelectionWidget = BokehSelectionWidget\nwindow.HoloViews.BokehScrubberWidget = BokehScrubberWidget\n</script>\n<script type="text/javascript">\n    function JupyterCommManager() {\n    }\n\n    JupyterCommManager.prototype.register_target = function(plot_id, comm_id, msg_handler) {\n      if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {\n        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;\n        comm_manager.register_target(comm_id, function(comm) {\n          comm.on_msg(msg_handler);\n        });      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {\n        window.PyViz.kernels[plot_id].registerCommTarget(comm_id, function(comm) {\n          comm.onMsg = msg_handler;\n        });\n      }\n    }\n\n    JupyterCommManager.prototype.get_client_comm = function(plot_id, comm_id, msg_handler) {\n      if (comm_id in window.PyViz.comms) {\n        return window.PyViz.comms[comm_id];\n      } else if (window.comm_manager || ((window.Jupyter !== undefined) && (Jupyter.notebook.kernel != null))) {\n        var comm_manager = window.comm_manager || Jupyter.notebook.kernel.comm_manager;\n        var comm = comm_manager.new_comm(comm_id, {}, {}, {}, comm_id);\n        if (msg_handler) {\n          comm.on_msg(msg_handler);\n        }\n      } else if ((plot_id in window.PyViz.kernels) && (window.PyViz.kernels[plot_id])) {\n        var comm = window.PyViz.kernels[plot_id].connectToComm(comm_id);\n        comm.open();\n        if (msg_handler) {\n          comm.onMsg = msg_handler;\n        }\n      }\n\n      window.PyViz.comms[comm_id] = comm;\n      return comm;\n    }\n\n    window.PyViz.comm_manager = new JupyterCommManager();\n    </script>',
- '\n<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">\n<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">\n<style>div.bk-hbox {\n    display: flex;\n    justify-content: center;\n}\n\ndiv.bk-hbox div.bk-plot {\n    padding: 8px;\n}\n\ndiv.bk-hbox div.bk-data-table {\n    padding: 20px;\n}\n\ndiv.hololayout {\n  display: flex;\n  align-items: center;\n  margin: 0;\n}\n\ndiv.holoframe {\n  width: 75%;\n}\n\ndiv.holowell {\n  display: flex;\n  align-items: center;\n}\n\nform.holoform { background-color: #fafafa;\n  border-radius: 5px;\n  overflow: hidden;\n  padding-left: 0.8em;\n  padding-right: 0.8em;\n  padding-top: 0.4em;\n  padding-bottom: 0.4em;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n  margin-bottom: 20px;\n  border: 1px solid #e3e3e3;\n}\n\ndiv.holowidgets {\n  padding-right: 0;\n  width: 25%;\n}\n\ndiv.holoslider {\n  min-height: 0 !important;\n  height: 0.8em;\n  width: 100%;\n}\n\ndiv.holoformgroup {\n  padding-top: 0.5em;\n  margin-bottom: 0.5em;\n}\n\ndiv.hologroup {\n  padding-left: 0;\n  padding-right: 0.8em;\n  width: 100%;\n}\n\n.holoselect {\n  width: 92%;\n  margin-left: 0;\n  margin-right: 0;\n}\n\n.holotext {\n  padding-left:  0.5em;\n  padding-right: 0;\n  width: 100%;\n}\n\n.holowidgets .ui-resizable-se {\n  visibility: hidden\n}\n\n.holoframe > .ui-resizable-se {  visibility: hidden\n}\n\n.holowidgets .ui-resizable-s {\n  visibility: hidden\n}\n\n\n/* CSS rules for noUISlider based slider used by JupyterLab extension  */\n\n.noUi-handle {\n  width: 20px !important;  height: 20px !important;\n  left: -5px !important;\n  top: -5px !important;\n}\n\n.noUi-handle:before, .noUi-handle:after {\n  visibility: hidden;\n  height: 0px;\n}\n\n.noUi-target {  margin-left: 0.5em;  margin-right: 0.5em;\n}
+ '\n<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>\n<link href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>\n<style>div.bk-hbox {\n    display: flex;\n    justify-content: center;\n}\n\ndiv.bk-hbox div.bk-plot {\n    padding: 8px;\n}\n\ndiv.bk-hbox div.bk-data-table {\n    padding: 20px;\n}\n\ndiv.hololayout {\n  display: flex;\n  align-items: center;\n  margin: 0;\n}\n\ndiv.holoframe {\n  width: 75%;\n}\n\ndiv.holowell {\n  display: flex;\n  align-items: center;\n}\n\nform.holoform { background-color: #fafafa;\n  border-radius: 5px;\n  overflow: hidden;\n  padding-left: 0.8em;\n  padding-right: 0.8em;\n  padding-top: 0.4em;\n  padding-bottom: 0.4em;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n  margin-bottom: 20px;\n  border: 1px solid #e3e3e3;\n}\n\ndiv.holowidgets {\n  padding-right: 0;\n  width: 25%;\n}\n\ndiv.holoslider {\n  min-height: 0 !important;\n  height: 0.8em;\n  width: 100%;\n}\n\ndiv.holoformgroup {\n  padding-top: 0.5em;\n  margin-bottom: 0.5em;\n}\n\ndiv.hologroup {\n  padding-left: 0;\n  padding-right: 0.8em;\n  width: 100%;\n}\n\n.holoselect {\n  width: 92%;\n  margin-left: 0;\n  margin-right: 0;\n}\n\n.holotext {\n  padding-left:  0.5em;\n  padding-right: 0;\n  width: 100%;\n}\n\n.holowidgets .ui-resizable-se {\n  visibility: hidden\n}\n\n.holoframe > .ui-resizable-se {  visibility: hidden\n}\n\n.holowidgets .ui-resizable-s {\n  visibility: hidden\n}\n\n\n/* CSS rules for noUISlider based slider used by JupyterLab extension  */\n\n.noUi-handle {\n  width: 20px !important;  height: 20px !important;\n  left: -5px !important;\n  top: -5px !important;\n}\n\n.noUi-handle:before, .noUi-handle:after {\n  visibility: hidden;\n  height: 0px;\n}\n\n.noUi-target {  margin-left: 0.5em;  margin-right: 0.5em;\n}
  </style>
-<link
-    href="https://cdn.pydata.org/bokeh/release/bokeh-x.y.z.min.css"
-    rel="stylesheet" type="text/css">
-<link
-    href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-x.y.z.min.css"
-    rel="stylesheet" type="text/css">
-<link
-    href="https://cdn.pydata.org/bokeh/release/bokeh-tables-x.y.z.min.css"
-    rel="stylesheet" type="text/css">
-
+<link href="https://cdn.pydata.org/bokeh/release/bokeh-x.y.z.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-x.y.z.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.pydata.org/bokeh/release/bokeh-tables-x.y.z.min.css" rel="stylesheet" type="text/css"/>
 <script src="https://cdn.pydata.org/bokeh/release/bokeh-x.y.z.min.js"></script>
 <script src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-x.y.z.min.js"></script>
 <script src="https://cdn.pydata.org/bokeh/release/bokeh-tables-x.y.z.min.js"></script>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="SOM's-some-more">SOM's some more<a class="anchor-link" href="#SOM's-some-more">&#182;</a></h1>
+<h1 id="SOM's-some-more">SOM's some more<a class="anchor-link" href="#SOM's-some-more">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I read a lot of articles and listen to a lot of machine learning podcasts on machine learning and one method I seldom come accross is the Kohonen Network or Self-organizaing Map (SOM).  SOM's are really useful tools in data representation, allowing scientists to extract rich density preserving summaries of their data which can be used to explore the shape and density of their data manifold.  The method makes a major assumption in the structure or shape of lattice used to wrap the data manifold.  The easiest way of thinking about this is to imagine wrapping a golf ball (the data manifold) in tin foil (the lattice).  We start be ititialized the weights of our lattice randomly.  We then continue by sampling a point in our dataset, computing the closest node on our lattice and updating the weights of the lattice using a neighbourhood function and learning rate (the <a href="https://en.wikipedia.org/wiki/Self-organizing_map">Wikipedia</a> page is pretty good).  This learning preceedure is known as competition and cooperation learning.  Below is a cool video on a SOM learning from a dataset.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/VVQm8ZfuuSA&quot; </span><span class="se">\</span>
-<span class="s1">frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; </span><span class="se">\</span>
-<span class="s1">picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">'&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/VVQm8ZfuuSA" </span><span class="se">\</span>
+<span class="s1">frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; </span><span class="se">\</span>
+<span class="s1">picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;'</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/home/marcussky/anaconda3/envs/poppy/lib/python3.6/site-packages/IPython/core/display.py:689: UserWarning: Consider using IPython.display.IFrame instead
-  warnings.warn(&#34;Consider using IPython.display.IFrame instead&#34;)
+  warnings.warn("Consider using IPython.display.IFrame instead")
 </pre>
 </div>
 </div>
-
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[1]:</div>
-
-
-
 <div class="output_html rendered_html output_subarea output_execute_result">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VVQm8ZfuuSA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-</div>
-
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/VVQm8ZfuuSA" width="560"></iframe>
 </div>
 </div>
-
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The aim of this post is to write a rudementary implementation of a SOM in pytorch and use the motivation to write a simplified algorithm, using methods like embeddings, convolution and pooling to see if we get a similar result.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torchvision</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1218,29 +1296,19 @@ h6:hover .anchor-link {
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">fetch_california_housing</span><span class="p">,</span> <span class="n">make_blobs</span><span class="p">,</span> <span class="n">make_moons</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">StandardScaler</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="k">import</span> <span class="n">euclidean_distances</span>
-<span class="n">hv</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="s1">&#39;bokeh&#39;</span><span class="p">)</span>
+<span class="n">hv</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="s1">'bokeh'</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
-
-
-
-<div id="a91ba96e-9079-4c45-bf3c-806764bcdc57"></div>
-<div class="output_subarea output_javascript ">
+<div id="83b08579-73e7-48f5-bf81-3d064833148f"></div>
+<div class="output_subarea output_javascript">
 <script type="text/javascript">
-var element = $('#a91ba96e-9079-4c45-bf3c-806764bcdc57');
+var element = $('#83b08579-73e7-48f5-bf81-3d064833148f');
 
 (function(root) {
   function now() {
@@ -1772,18 +1840,11 @@ var element = $('#a91ba96e-9079-4c45-bf3c-806764bcdc57');
 }(window));
 </script>
 </div>
-
 </div>
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<div class="output_html rendered_html output_subarea">
+<link href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
 <style>div.hololayout {
   display: flex;
   align-items: center;
@@ -1891,24 +1952,14 @@ div.bk-hbox div.bk-data-table {
     padding: 20px;
 }
 </style>
-
-
 </div>
-
 </div>
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
-
-
-
-<div id="8e1d059f-6ef4-418c-b266-73d4a026482c"></div>
-<div class="output_subarea output_javascript ">
+<div id="484db590-86a3-4be0-bc71-654600b9291c"></div>
+<div class="output_subarea output_javascript">
 <script type="text/javascript">
-var element = $('#8e1d059f-6ef4-418c-b266-73d4a026482c');
+var element = $('#484db590-86a3-4be0-bc71-654600b9291c');
 function HoloViewsWidget() {
 }
 
@@ -2703,21 +2754,13 @@ if (window.Jupyter !== undefined) {
 
 </script>
 </div>
-
 </div>
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
-
-
-
-<div id="7b37568e-4bb3-45f6-a755-4429d6f097bf"></div>
-<div class="output_subarea output_javascript ">
+<div id="e67940be-8f56-4d2b-a3f1-511a288fe8ea"></div>
+<div class="output_subarea output_javascript">
 <script type="text/javascript">
-var element = $('#7b37568e-4bb3-45f6-a755-4429d6f097bf');
+var element = $('#e67940be-8f56-4d2b-a3f1-511a288fe8ea');
 
 (function(root) {
   function now() {
@@ -3249,18 +3292,11 @@ var element = $('#7b37568e-4bb3-45f6-a755-4429d6f097bf');
 }(window));
 </script>
 </div>
-
 </div>
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<div class="output_html rendered_html output_subarea">
+<link href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
 <style>div.hololayout {
   display: flex;
   align-items: center;
@@ -3368,10 +3404,8 @@ div.bk-hbox div.bk-data-table {
     padding: 20px;
 }
 </style>
-
-
 <div class="logo-block">
-<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAB+wAAAfsBxc2miwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAA6zSURB
 VHic7ZtpeFRVmsf/5966taWqUlUJ2UioBBJiIBAwCZtog9IOgjqACsogKtqirT2ttt069nQ/zDzt
 tI4+CrJIREFaFgWhBXpUNhHZQoKBkIUASchWla1S+3ar7r1nPkDaCAnZKoQP/D7mnPOe9/xy76n3
@@ -3439,35 +3473,17 @@ SLHujPOTPVW+rwY+sxskAAC2HrA8t2Vvc7ffP1r9o+vwR2dcr92InIAbKKC1FZ5tB1tf+/G8p8sv
 N/9Q5zd/XR34LYCwV5JdccMEAMDBk45DH243r/X4xGvqxFa/GNpS7n6rwOwNWwHVE26oAADYurf1
 zx/utOzt+DMKYM0p17YtZZ5VNzqfsB2HewG1WXE8PoZ7gOclbTIvynZf9JV+fqZtfgs/8F/Nu5rB
 EIBmJ+8QRMmpU7EzGRsf2FzuePqYRbzh/zE26EwdrT10f6r6o8HOYzCJB9Dpff8tbnGLG8L/A/WE
-roTBs2RqAAAAAElFTkSuQmCC'
-     style='height:25px; border-radius:12px; display: inline-block; float: left; vertical-align: middle'></img>
-
-
-  <img src='data:image/png;base64,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'
-       style='height:15px; border-radius:12px; display: inline-block; float: left'></img>
-  
-
-
-
-
+roTBs2RqAAAAAElFTkSuQmCC" style="height:25px; border-radius:12px; display: inline-block; float: left; vertical-align: middle"/>
+<img src="data:image/png;base64,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" style="height:15px; border-radius:12px; display: inline-block; float: left"/>
 </div>
-
 </div>
-
 </div>
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
-
-
-
-<div id="281a4245-f804-4e18-a10b-898bed8c1681"></div>
-<div class="output_subarea output_javascript ">
+<div id="a6a8d2c2-90a6-4558-8a54-5540c5c1fde9"></div>
+<div class="output_subarea output_javascript">
 <script type="text/javascript">
-var element = $('#281a4245-f804-4e18-a10b-898bed8c1681');
+var element = $('#a6a8d2c2-90a6-4558-8a54-5540c5c1fde9');
 function HoloViewsWidget() {
 }
 
@@ -4262,65 +4278,48 @@ if (window.Jupyter !== undefined) {
 
 </script>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this experiment, I will be generating a dataset consisting of three clusters using Scikit-Learn's _make<em>blobs</em> function and parsing it into a torch tensor.  A lower dimensional scatter plot is shown below just to get an idea of what this would look like in two dimensions instead of the 8 dimensions I am using.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">float</span><span class="p">()</span> <span class="c1"># Making clusters</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">float</span><span class="p">()</span> <span class="c1"># Making clusters</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hv</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">hv</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
                       <span class="n">n_features</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>\
   <span class="o">.</span><span class="n">opts</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
-
-<div id="0138e859-ad93-4109-bc99-b185b4bd7e57"></div>
+<div id="f326037e-6d04-4535-bfd5-ea34a2c6babf"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#0138e859-ad93-4109-bc99-b185b4bd7e57');
+var element = $('#f326037e-6d04-4535-bfd5-ea34a2c6babf');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('1004')) && !(document.getElementById('_anim_imgNone'))) {
@@ -4369,46 +4368,39 @@ if (!(document.getElementById('1004')) && !(document.getElementById('_anim_imgNo
 })(window);
 </script>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this experiment I am using simple euclidian distance and will be visualizing the dataset using the <a href="https://en.wikipedia.org/wiki/U-matrix">U-matrix</a>.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># data = fetch_california_housing()</span>
-<span class="c1"># features = torch.from_numpy(StandardScaler().fit_transform(data[&#39;data&#39;])).float()</span>
-<span class="c1"># target = torch.from_numpy(data[&#39;target&#39;]).float()</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># data = fetch_california_housing()</span>
+<span class="c1"># features = torch.from_numpy(StandardScaler().fit_transform(data['data'])).float()</span>
+<span class="c1"># target = torch.from_numpy(data['target']).float()</span>
 
 <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">PairwiseDistance</span><span class="p">(</span><span class="n">keepdim</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">sampler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">U_max</span><span class="p">(</span><span class="n">weights</span><span class="p">):</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">U_max</span><span class="p">(</span><span class="n">weights</span><span class="p">):</span>
     <span class="n">u</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">weights</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
@@ -4422,66 +4414,57 @@ if (!(document.getElementById('1004')) && !(document.getElementById('_anim_imgNo
     
     <span class="k">return</span> <span class="n">m</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-SOM">The SOM<a class="anchor-link" href="#The-SOM">&#182;</a></h2>
+<h2 id="The-SOM">The SOM<a class="anchor-link" href="#The-SOM">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So let's start with our traditional SOM.  Here I am constructing a neighbourhood function based on the inverse of the shortest path topological distances accross the 25 by 25 lattice.  I will be setting my updating function to use this topological distance and a function of the epochs- this is commmon.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.0125</span>
 <span class="n">n_epochs</span> <span class="o">=</span> <span class="mi">50</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weights</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> 
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">weights</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> 
                        <span class="n">features</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">grid_2d_graph</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">*</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;O&#39;</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">*</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'O'</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
@@ -4494,18 +4477,16 @@ if (!(document.getElementById('1004')) && !(document.getElementById('_anim_imgNo
 
 <span class="n">G_distances</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
 <span class="n">epochs</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_epochs</span><span class="p">):</span>
@@ -4531,59 +4512,40 @@ if (!(document.getElementById('1004')) && !(document.getElementById('_anim_imgNo
             
     <span class="n">epochs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">losses</span><span class="p">))</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>CPU times: user 13.2 s, sys: 365 ms, total: 13.6 s
 Wall time: 14.7 s
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">epochs</span><span class="p">)</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Loss per Epoch&#39;</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">epochs</span><span class="p">)</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">'Loss per Epoch'</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-
-
-<div id="ea436389-21ac-427c-aa79-3af846a7aae3"></div>
+<div id="cd956c9a-5064-4929-94f3-67ac89e4cce3"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#ea436389-21ac-427c-aa79-3af846a7aae3');
+var element = $('#cd956c9a-5064-4929-94f3-67ac89e4cce3');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('1115')) && !(document.getElementById('_anim_imgNone'))) {
@@ -4632,51 +4594,36 @@ if (!(document.getElementById('1115')) && !(document.getElementById('_anim_imgNo
 })(window);
 </script>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Sadly, my results are pretty poor.  The loss per epoch is pretty good, but the visualization of the U-matrix is pretty poor to interpret and gives no clear indication of the shape or dimensionality of the data.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">output</span> size=150 filename=&#39;SOM.png&#39; fig=&#39;png&#39;
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">output</span> size=150 filename='SOM.png' fig='png'
 hv.Image(U_max(weights.detach().transpose(1,2).numpy()).values)
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[12]:</div>
-
-
-
-
-
-<div id="ed0f7e51-6a1d-4c04-9469-bfb5ddcda1fa"></div>
+<div id="26f6271b-a37c-4436-9e28-e66363be4157"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#ed0f7e51-6a1d-4c04-9469-bfb5ddcda1fa');
+var element = $('#26f6271b-a37c-4436-9e28-e66363be4157');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('1226')) && !(document.getElementById('_anim_imgNone'))) {
@@ -4694,36 +4641,30 @@ if (!(document.getElementById('1226')) && !(document.getElementById('_anim_imgNo
 
 </script>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Convolution">Convolution<a class="anchor-link" href="#Convolution">&#182;</a></h1>
+<h1 id="Convolution">Convolution<a class="anchor-link" href="#Convolution">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So a weird this I was wanting to try was to replace by weights with an embedding layer and by topological distance updating functin with a 2d convolutional layer.  While this a bit of a cheat, it makes the computing of the euclidan distances easier and also allows for us to better account for noisy features in the data.  Deep learning libraries are often highly optimized for convolution these days so its can be really easy to write a network with this kind of archetechture during data exploration and have it run fast. I have included the <em>%%time</em> magic to compare and benchmark speed.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 
 
@@ -4741,31 +4682,27 @@ if (!(document.getElementById('1226')) && !(document.getElementById('_anim_imgNo
 
 <span class="n">net</span> <span class="o">=</span> <span class="n">cSOM</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.0175</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.0175</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
 <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>  <span class="c1"># loop over the dataset multiple times</span>
@@ -4784,22 +4721,15 @@ if (!(document.getElementById('1226')) && !(document.getElementById('_anim_imgNo
         <span class="n">running_loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
     <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">running_loss</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finished Training&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Finished Training'</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Finished Training
 CPU times: user 3min 52s, sys: 652 ms, total: 3min 52s
@@ -4807,39 +4737,27 @@ Wall time: 1min 40s
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">losses</span><span class="p">)</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Loss per Epoch&#39;</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">losses</span><span class="p">)</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">'Loss per Epoch'</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-
-<div id="db3a68fd-eb6e-4c57-9529-c26941a99366"></div>
+<div id="550ef84b-8ea1-47c6-8bd4-5ae6cd8698ac"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#db3a68fd-eb6e-4c57-9529-c26941a99366');
+var element = $('#550ef84b-8ea1-47c6-8bd4-5ae6cd8698ac');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('1497')) && !(document.getElementById('_anim_imgNone'))) {
@@ -4888,51 +4806,36 @@ if (!(document.getElementById('1497')) && !(document.getElementById('_anim_imgNo
 })(window);
 </script>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Its clearly a lot slower as there are a lot more weights but allows producing a clear visualization of our clusters which is easy to interpret in this lower dimensional space.  I'm quite happy.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">output</span> size=150 filename=&#39;cSOM&#39; fig=&#39;png&#39;
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">output</span> size=150 filename='cSOM' fig='png'
 hv.Image(U_max(weights=net.weights(net.input)[0].detach().numpy()).values)
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[17]:</div>
-
-
-
-
-
-<div id="04a86a12-06a0-4e90-b382-4b80b93cdca4"></div>
+<div id="6cedd088-85dd-4be9-8d54-18788fdfe4df"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#04a86a12-06a0-4e90-b382-4b80b93cdca4');
+var element = $('#6cedd088-85dd-4be9-8d54-18788fdfe4df');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('1608')) && !(document.getElementById('_anim_imgNone'))) {
@@ -4950,36 +4853,30 @@ if (!(document.getElementById('1608')) && !(document.getElementById('_anim_imgNo
 
 </script>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Pooling">Pooling<a class="anchor-link" href="#Pooling">&#182;</a></h2>
+<h2 id="Pooling">Pooling<a class="anchor-link" href="#Pooling">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>While we are cheating, let's try replacing our neighbourhood function with simple average-pooling. We are taking a similar approach to belore, were we feed our embedding layer into a pooling layer and compute the distance between the output to a point sampled from our data.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 
 
@@ -4997,31 +4894,27 @@ if (!(document.getElementById('1608')) && !(document.getElementById('_anim_imgNo
 
 <span class="n">poolnet</span> <span class="o">=</span> <span class="n">cSOM</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pooloptimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">poolnet</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.0175</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pooloptimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">poolnet</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.0175</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
 <span class="n">poollosses</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>  <span class="c1"># loop over the dataset multiple times</span>
@@ -5040,22 +4933,15 @@ if (!(document.getElementById('1608')) && !(document.getElementById('_anim_imgNo
         <span class="n">running_loss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
     <span class="n">poollosses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">running_loss</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finished Training&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Finished Training'</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Finished Training
 CPU times: user 2min 48s, sys: 524 ms, total: 2min 49s
@@ -5063,39 +4949,27 @@ Wall time: 1min 14s
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">poollosses</span><span class="p">)</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Loss per Epoch&#39;</span><span class="p">)</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">poollosses</span><span class="p">)</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">'Loss per Epoch'</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[21]:</div>
-
-
-
-
-
-<div id="3c2c8054-7ee3-4d0a-b03c-3d21289e4cfe"></div>
+<div id="7b7d638d-9a39-4f6c-ab28-8d47e3e5694f"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#3c2c8054-7ee3-4d0a-b03c-3d21289e4cfe');
+var element = $('#7b7d638d-9a39-4f6c-ab28-8d47e3e5694f');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('1879')) && !(document.getElementById('_anim_imgNone'))) {
@@ -5144,51 +5018,36 @@ if (!(document.getElementById('1879')) && !(document.getElementById('_anim_imgNo
 })(window);
 </script>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This method shows a remarkable speedup on the use of convolution and seems to give the desired outcome of visualizing our data.  Very pleased.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">output</span> size=150 filename=&#39;pSOM&#39; fig=&#39;png&#39;
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">output</span> size=150 filename='pSOM' fig='png'
 hv.Image(U_max(poolnet.weights(poolnet.input)[0].detach().numpy()).values)
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
 <div class="prompt output_prompt">Out[22]:</div>
-
-
-
-
-
-<div id="b9333a84-4e7c-4ada-8373-95a00c2fb6bc"></div>
+<div id="60f77938-2753-4acc-adb2-5aefb0b36d8e"></div>
 <div class="output_subarea output_javascript output_execute_result">
 <script type="text/javascript">
-var element = $('#b9333a84-4e7c-4ada-8373-95a00c2fb6bc');
+var element = $('#60f77938-2753-4acc-adb2-5aefb0b36d8e');
 
 // Ugly hack - see HoloViews #2574 for more information
 if (!(document.getElementById('1990')) && !(document.getElementById('_anim_imgNone'))) {
@@ -5206,24 +5065,17 @@ if (!(document.getElementById('1990')) && !(document.getElementById('_anim_imgNo
 
 </script>
 </div>
-
-</div>
-
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This post is not meant to be an academic and robust exploration of SOMS, but rather my ideas and musings on their application and implementations. I will definately be trying this method on future datasets to analyze and identify the structure of high dimensional data.  Thanks for reading.</p>
-
 </div>
 </div>
 </div>
- 
-
 
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
@@ -5253,82 +5105,8 @@ if (!(document.getElementById('1990')) && !(document.getElementById('_anim_imgNo
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
+
 </div>
-
-  </article>
-</section>
-
-<script type="application/ld+json">
-  {"articleSection": "posts", "author": {"@type": "Person", "name": "Marcus Gawronsky"}, "datePublished": "2018-12-02T20:00:00+02:00", "headline": "SOMS some more", "mainEntityOfPage": {"@type": "WebPage", "@id": "./soms-more.html"}, "@context": "http://schema.org", "@type": "BlogPosting", "description": "SOMS (Self-organizing Maps), or Kohonen Networks, are an awesome way of learning from and analyzing the structure of high-dimensional data. Today, the method is far less popular than many hotter network architectures: let's bridge the gap.", "image": {"@type": "ImageObject", "url": "data:image/png;base64,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\nroTBs2RqAAAAAElFTkSuQmCC"}}
-</script>
-    </div>
-
-    <div class="column is-one-quarter-desktop is-one-third-tablet is-hidden-print">
-      <aside class="menu">
-          <p class="menu-label">Links</p>
-          <ul class="menu-list">
-              <li><a href="http://getpelican.com/">
-                <span class="icon is-small"><i class="fa fa-globe fa-fw"></i></span>
-                <span class="link-text">Pelican</span>
-              </a></li>
-              <li><a href="http://python.org/">
-                <span class="icon is-small"><i class="fa fa-globe fa-fw"></i></span>
-                <span class="link-text">Python.org</span>
-              </a></li>
-          </ul>
-<p class="menu-label">Social</p>
-<ul class="menu-list">
-    <li><a href="https://twitter.com/marcusinthesky">
-      <span class="icon is-small">
-          <i class="fa fa-twitter fa-fw"></i>
-      </span>
-      <span class="link-text">Twitter</span>
-    </a></li>
-    <li><a href="https://github.com/marcusinthesky">
-      <span class="icon is-small">
-          <i class="fa fa-github fa-fw"></i>
-      </span>
-      <span class="link-text">GitHub</span>
-    </a></li>
-    <li><a href="https://za.linkedin.com/in/marcussky">
-      <span class="icon is-small">
-          <i class="fa fa-linkedin fa-fw"></i>
-      </span>
-      <span class="link-text">LinkedIn</span>
-    </a></li>
-    <li><a href="https://www.kaggle.com/marcusgawronsky">
-      <span class="icon is-small">
-          <i class="fa fa-globe fa-fw"></i>
-      </span>
-      <span class="link-text">Kaggle</span>
-    </a></li>
-</ul>      </aside>
-    </div>
-  </div>
-</div>
-
-<footer class="footer">
-  <div class="container has-text-centered">
-    <div class="credits">
-      <span><a href="https://github.com/textbook/bulrush">Bulrush</a> theme for
-        <a href="https://blog.getpelican.com/">Pelican</a></span>
-      <span><span class="icon is-small"><i class="fa fa-html5"></i></span> HTML 5</span>
-      <span><span class="icon is-small"><i class="fa fa-css3"></i></span> CSS 3</span>
-      <img class="badge" src="https://bulma.io/images/made-with-bulma--black.png">
-    </div>
-  </div>
-</footer>
-
-<script type="text/javascript">
-  document.getElementById('navToggle').addEventListener('click', function () {
-    var nav = document.getElementById('navMenu');
-    var className = nav.getAttribute('class');
-    if (className == 'navbar-menu') {
-      nav.className = 'navbar-menu is-active';
-    } else {
-      nav.className = 'navbar-menu';
-    }
-  });
-</script>
-</body>
+		</div>
+	</body>
 </html>
