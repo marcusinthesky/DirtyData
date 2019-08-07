@@ -20,5 +20,5 @@ $ git status
 ./content/Datasets/
 ./content/Data/
 ./content/Models/
-./content/dask-worker-space
+*/dask-worker-space
 ./notes/
